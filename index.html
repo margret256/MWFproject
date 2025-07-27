@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MWF Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+   
+    .user-role {
+      text-align: right;
+      padding: 1rem;
+      font-style: italic;
+      color: gray;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #0505f1;
+    }
+    .card button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #06f50a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .card button:hover {
+      background-color: #04f71d;
+    }
+    .hidden {
+      display: none;
+    }
+    .login-section {
+      max-width: 400px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .login-section h2 {
+      color: #3c08f8;
+      text-align: center;
+    }
+    .login-section select,
+    .login-section button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 1rem;
+      border-radius: 5px;
+      border: 5px solid #ce0505;
+    }
+    .login-section button {
+      background-color: #1bfc06;
+      color: rgb(33, 4, 254);
+      border: none;
+      font-weight: bold;
+    }
+    .login-section button:hover {
+      background-color: #06f913;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mayondo Wood and Furniture Ltd</h1>
+    <p>Company Dashboard</p>
+  </header>
+  <nav>
+    <a href="index.html">Dashboard</a>
+    <a href="stock.html">Stock</a>
+    <a href="sales.html">Sales</a>
+    <a href="customers.html">Customers</a>
+    <a href="Products.html">Products</a>
+  </nav>
+  <body>
+  <div class="login-section">
+    <h2>Select Your Role</h2>
+    <select id="roleSelector">
+      <option value="Manager">Manager</option>
+      <option value="Employee">Employee</option>
+      <option value="Customer">Customer</option>
+    </select>
+    <button onclick="setUserRole()">Log In</button>
+  </div>
+
+  <div class="user-role">
+    Logged in as: <strong id="userRole">Employee/Customer</strong>
+  </div>
+    <div class="container">
+    <div class="card" id="stock">
+      <h3>Stock Records</h3>
+      <p>Employees and customers can see what products are available, including their type, quantity, and quality as recorded by the manager.</p>
+  
+    </div>
+
+    <div class="card" id="sales">
+      <h3>Sales Summary</h3>
+      <p>View company sales summaries including total sold items, sales dates, and customer names recorded by the manager.</p>
+  
+    </div>
+
+    <div class="card" id="products">
+      <h3>Furniture & Wood Products</h3>
+      <p>Check the list of available furniture and wood products, such as beds, sofas, timber, poles, and more.</p>
+      
+    </div>
+
+    <div class="card" id="feedback">
+      <h3>Send Feedback or Request</h3>
+      <p>If you are a customer or employee, you can leave feedback or request assistance from management.</p>
+      
+    </div>
+
+    <div class="card hidden manager-only" id="finances">
+      <h3>Company Finances</h3>
+      <ul>
+        <li><strong>Total Revenue:</strong> UGX 15,000,000</li>
+        <li><strong>Total Expenses:</strong> UGX 6,200,000</li>
+        <li><strong>Net Profit:</strong> UGX 8,800,000</li>
+      </ul>
+    </div>
+
+    <div class="card hidden manager-only" id="stock-count">
+      <h3>Number of Items in Stock</h3>
+      <p><strong>Furniture:</strong> 130 items<br><strong>Wood & Materials:</strong> 95 units</p>
+    <img src="log 1.webp" alt="">
+      </div>
+    <div class="card hidden manager-only" id="sales-records">
+      <h3>Sales Records</h3>
+      <p><strong>Items Sold This Month:</strong> 76<br><strong>Top Product:</strong> 6-Seater Sofa</p>
+    </div>
+
+    <div class="card hidden manager-only" id="customer-count">
+      <h3>Customer Count</h3>
+      <p><strong>Total Customers Registered:</strong> 420</p>
+    </div>
+
+    <div class="card hidden manager-only" id="inputs-outputs">
+      <h3>Inputs and Outputs</h3>
+      <p><strong>Inputs:</strong> Raw wood, nails, cushions, fabric<br><strong>Outputs:</strong> Beds, chairs, sofas, tables</p>
+    </div>
+  </div>
+  <script>
+    function setUserRole() {
+      const role = document.getElementById('roleSelector').value;
+      localStorage.setItem('userRole', role);
+      document.getElementById('userRole').textContent = role;
+      updateManagerView(role);
+    }
+
+    function updateManagerView(role) {
+      const managerCards = document.querySelectorAll('.manager-only');
+      managerCards.forEach(card => {
+        card.classList.toggle('hidden', role.toLowerCase() !== 'manager');
+      });
+    }
+
+    const savedRole = localStorage.getItem('userRole') || 'Employee';
+    document.getElementById('userRole').textContent = savedRole;
+    updateManagerView(savedRole);
+
+    function logout() {
+      localStorage.removeItem('loggedIn');
+      localStorage.removeItem('userRole');
+      window.location.href = 'login.html';
+    }
+  </script>
+ <img src="images/log 1.webp" style="text-align:center; height:300px; width:200px;">
+ <img src="images/log 2.webp" style="text-align:center; height:300px;width:200px;">
+ <img src="images/timber 1.jpg" style="text-align:left; height:300px; width:200px;">
+ <img src="images/timber 2.jpg" style="text-align:center; height:300px; width:200px;">
+ <img src="images/timber 3.jpeg" style="text-align:center; height:300px;width:200px;">
+ <img src="images/furni 2.jpeg" style="text-align:left; height:300px; width:200px;">
+ <img src="images/furni 3.jpeg" style="text-align:center; height:300px;width:200px;">
+ <img src="images/furni 4.jpeg" style="text-align:left; height:300px; width:200px;">
+ <img src="images/furni 6.jpeg" style="text-align:center; height:300px; width:200px;">
+ <img src="images/furni 8.jpg" style="text-align:left; height:300px; width:200px;">
+ <img src="images/furni 9.jpeg" style="text-align:center; height:300px; width:200px;">
+ <img src="images/furni 12.jpg" style="text-align:center; height:300px;width:200px;">
+ <img src="images/furni 10.jpeg" style="text-align:left; height:300px; width:200px;">
+ <img src="images/furni 13.webp" style="text-align:center; height:300px;width:200px;">
+ <img src="images/furni 14.jpeg" style="text-align:left; height:300px; width:200px;">
+ <img src="images/furni 16.jpg" style="text-align:center; height:300px; width:200px;">
+ <img src="images/furni 17.jpg" style="text-align:left; height:300px; width:200px;">
+ <img src="images/furni 5.jpeg" style="text-align:center; height:300px; width:200px;">
+ <img src="images/furni 18.jpg" style="text-align:center; height:300px; width:200px;">
+ <img src="images/furni 20.jpg" style="text-align:center; height:300px; width:200px;">
+</body>
+</html>

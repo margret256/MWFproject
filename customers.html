@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MWF Sales Page</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Mayondo Wood and Furniture Ltd</h1>
+    <p>Sales Recording</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Dashboard</a>
+    <a href="stock.html">Stock</a>
+    <a href="sales.html">Sales</a>
+    <a href="customers.html">Customers</a>
+    <a href="Products.html">Productss</a>
+  </nav>
+
+  <div class="container">
+    <div class="form-section">
+      <h2>Record a Sale</h2>
+      <form id="salesForm">
+        <label for="customerName">Customer Name:</label>
+        <input type="text" id="customerName" required>
+
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" required>
+
+        <label for="productType">Product Type:</label>
+        <select id="productType" required>
+          <option value="wood">Wood</option>
+          <option value="furniture">Furniture</option>
+        </select>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" required>
+
+        <label for="pricePerItem">Selling Price (UGX):</label>
+        <input type="number" id="pricePerItem" required>
+
+        <label for="transport">Include Transport?</label>
+        <select id="transport" required>
+          <option value="no">No</option>
+          <option value="yes">Yes (Add 5%)</option>
+        </select>
+
+        <label for="paymentType">Payment Type:</label>
+        <select id="paymentType" required>
+          <option value="cash">Cash</option>
+          <option value="cheque">Cheque</option>
+          <option value="bank overdraft">Bank Overdraft</option>
+        </select>
+
+        <label for="salesAgent">Sales Agent Name:</label>
+        <input type="text" id="salesAgent" required>
+
+        <label for="saleDate">Sale Date:</label>
+        <input type="date" id="saleDate" required>
+
+        <p class="total-amount">Total Price: <span id="totalDisplay">UGX 0</span></p>
+
+        <button type="submit">Save Sale</button>
+      </form>
+    </div>
+ </head>
+ <body>
+ 
+   <h1>Mayondo Wood and Furniture - Product List</h1>
+   <h2>Customer Product Orders</h2>
+ 
+   <script>
+     const customerTables = [
+       { name: "Customer 1", product: "6-Seater Sofa", quantity: 1, cost: "UGX 950,000" },
+       { name: "Customer 2", product: "Dining Table", quantity: 2, cost: "UGX 1,200,000" },
+       { name: "Customer 3", product: "Wardrobe", quantity: 1, cost: "UGX 700,000" },
+       { name: "Customer 4", product: "Coffee Table", quantity: 3, cost: "UGX 300,000" },
+       { name: "Customer 5", product: "Single Bed", quantity: 2, cost: "UGX 800,000" },
+       { name: "Customer 6", product: "Office Desk", quantity: 1, cost: "UGX 600,000" },
+       { name: "Customer 7", product: "Bookshelf", quantity: 4, cost: "UGX 1,000,000" },
+       { name: "Customer 8", product: "Shoe Rack", quantity: 2, cost: "UGX 250,000" }
+     ];
+ 
+     customerTables.forEach((item, index) => {
+       document.write(`
+         <h3>${item.name}</h3>
+         <table class="product-table">
+           <thead>
+             <tr>
+               <th>Product Type</th>
+               <th>Quantity</th>
+               <th>Cost</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <td>${item.product}</td>
+               <td>${item.quantity}</td>
+               <td>${item.cost}</td>
+             </tr>
+           </tbody>
+         </table>
+       `);
+     });
+   </script>
+ 
+ </body>
+ </html>
+ 
+</body>
+</html>

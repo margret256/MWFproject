@@ -1,0 +1,123 @@
+]<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MWF Product Table</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .product-table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .product-table thead {
+      background-color: hsl(135, 18%, 96%);
+      color: rgb(73, 8, 252);
+    }
+    .product-table th, .product-table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    .product-table tr:hover {
+      background-color: #f1f1f1;
+    }
+    .status-available {
+      color: green;
+      font-weight: bold;
+    }
+    .status-low {
+      color: orange;
+      font-weight: bold;
+    }
+    .status-out {
+      color: red;
+      font-weight: bold;
+    }
+   </style>
+<body>
+  <h1>Mayondo Wood and Furniture - Product List</h1>
+  <nav>
+    <a href="index.html">Dashboard</a>
+    <a href="stock.html">Stock</a>
+    <a href="sales.html">Sales</a>
+    <a href="customers.html">Customers</a>
+    <a href="Products.html">Products</a>
+    <a href="logout.html">logout</a>
+  </nav>
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Type</th>
+        <th>Quantity</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>6-Seater Sofa</td>
+        <td>Furniture</td>
+        <td>15</td>
+        <td class="status-available">Available</td>
+      </tr>
+      <tr>
+        <td>Dining Table</td>
+        <td>Furniture</td>
+        <td>10</td>
+        <td class="status-available">Available</td>
+      </tr>
+      <tr>
+        <td>Pine Timber</td>
+        <td>Wood</td>
+        <td>5</td>
+        <td class="status-low">Low Stock</td>
+      </tr>
+      <tr>
+        <td>Wardrobe</td>
+        <td>Furniture</td>
+        <td>0</td>
+        <td class="status-out">Out of Stock</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>New Stock Arrivals</h2>
+
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Arrival Date</th>
+        <th>Quantity Added</th>
+        <th>Supplier</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Single Bed</td>
+        <td>2025-07-20</td>
+        <td>12</td>
+        <td>GreenWood Suppliers</td>
+      </tr>
+      <tr>
+        <td>Mahogany Timber</td>
+        <td>2025-07-23</td>
+        <td>30</td>
+        <td>Uganda Wood Co.</td>
+      </tr>
+      <tr>
+        <td>Dining Table</td>
+        <td>2025-07-24</td>
+        <td>5</td>
+        <td>Classic Interiors</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
