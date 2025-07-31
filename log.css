@@ -19,7 +19,7 @@ body {
 }
 
 header {
-    background: rgba(12, 252, 32, 0.913);
+    background: #04ee17e9;
     backdrop-filter: blur(10px);
     padding: 1rem 0;
     position: fixed;
@@ -37,7 +37,7 @@ nav {
 .logo {
     font-size: 1.8rem;
     font-weight: bold;
-    color: rgb(38, 242, 7);
+    color: rgb(1, 9, 0);
 }
 
 .nav-links {
@@ -47,7 +47,7 @@ nav {
 }
 
 .nav-links a {
-    color: #1b04aa;
+    color: #22fd05;
     text-decoration: none;
     transition: opacity 0.3s;
 }
@@ -63,7 +63,7 @@ main {
 
 .page {
     display: none;
-    background: rgba(10, 0, 0, 0.95);
+    background-image: url(images/free.jpg);
     border-radius: 15px;
     padding: 2rem;
     margin: 2rem 0;
@@ -87,7 +87,7 @@ main {
 
 .hero p {
     font-size: 1.2rem;
-    color: hwb(55 4% 2%);
+    color: hwb(53 4% 2%);
     margin-bottom: 2rem;
 }
 
@@ -137,7 +137,7 @@ main {
 
 .form-group input:focus {
     outline: none;
-    border-color: #052ee5;
+    border-color: #e5e505;
 }
 
 .user-dashboard {
@@ -145,7 +145,7 @@ main {
 }
 
 .user-info {
-    background: #036bd3;
+    background: #ff5b02;
     padding: 2rem;
     border-radius: 10px;
     margin: 2rem 0;
@@ -159,8 +159,8 @@ main {
 }
 
 footer {
-    background: #0d0000cc;
-    color: rgb(19, 7, 244);
+    background: #0d0000f9;
+    color: rgb(244, 94, 7);
     text-align: center;
     padding: 2rem 0;
     margin-top: 4rem;
@@ -180,7 +180,7 @@ footer {
 }
 
 .footer-links a {
-    color: rgb(46, 5, 250);
+    color: #fa6705;
     text-decoration: none;
     transition: opacity 0.3s;
 }
