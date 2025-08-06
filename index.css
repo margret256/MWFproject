@@ -8,7 +8,7 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: hsl(254, 93%, 33%);
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #010208 0%, #07020c 100%);
     min-height: 100vh;
 }
 
@@ -63,7 +63,7 @@ main {
 
 .page {
     display: none;
-    background-image: url(images/free.jpg);
+    background-image: url(images/booo.jpg);
     border-radius: 15px;
     padding: 2rem;
     margin: 2rem 0;
