@@ -20,7 +20,7 @@ header {
 nav {
   display: flex;
   justify-content: center;
-  background-color: #ef04b8;
+  background-color: #4E342E;
   padding: 0.5rem 0;
 }
 
@@ -66,6 +66,8 @@ main {
 
 .card h2 {
   margin-top: 0;
+  font-weight:bold;
+  font-style:oblique;
 }
 
 label {
@@ -85,7 +87,7 @@ select {
 }
 
 button {
-  background-color: #2e8b57;
+  background-color: #4E342E;
   color: white;
   border: none;
   padding: 10px 20px;

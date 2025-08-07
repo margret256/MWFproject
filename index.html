@@ -1,272 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mayondo Wood and Furniture</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="log.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login & Register - Mayondo Wood and Furniture</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
+
+  <nav class="navbar">
     <header>
-        <nav class="container">
-            <div class="logo">MWF LTD</div>
-            <ul class="nav-links">
-                <li><a href="index.html" onclick="showPage('index')"></a></li>
-                <li><a href="stock.html" onclick="showPage()" id=""></a></li>
-                <li><a href="sales.html" onclick="showPage()" id=""display: none;></a></li>
-                <li><a href="customers.html" onclick="showPage()" id="logoutNav" style="display: none;"></a></li>
-                <li><a href="Products.html" onclick="showPage()" id=""></a></li>
-                <li><a href="logout.html" onclick="showPage()" id=""></a></li>
-                
-            </ul>
-        </nav>
+      <h1>Mayondo Wood and Furniture Ltd</h1>
+      <p></p>
     </header>
+    <ul>
+      <li><a href="index.html">Login</a></li>
+      <li><a href="dash.html">Dashboard</a></li>
+      <!-- <li><a href="stock.html">Stock</a></li>
+      <li><a href="sales.html">Sales</a></li>
+      <li><a href="customers.html">Customers</a></li>
+      <li><a href="products.html">Products</a></li>
+    </ul> -->
+  </nav>
 
-    <main class="container">
-        <div id="index" class="page active">
-            <div class="hero">
-                <h1 id="demo" style="color: red; text-align: center;">Welcome to Mayondo Wood and Furniture</h1>
-                <p id="demo" style="color: rgb(54, 164, 3); text-align: center;">Your gateway to amazing content and user experience</p>
-                <a href="#" onclick="showPage('login')" class="btn">Get Started</a>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0;">
-                <div style="text-align: center; padding: 2rem;">
-                    <div class="container">
-                    <h3>Feature 1</h3>
-                    <p>Amazing functionality that will enhance your experience</p>
-                </div>
-                <div style="text-align: center; padding: 2rem;">
-                    <h3>Feature 2</h3>
-                    <p>Innovative solutions for your everyday needs</p>
-                </div>
-                <div style="text-align: center; padding: 2rem;">
-                    <h3>Feature 3</h3>
-                    <p>Seamless integration with modern technology</p>
-                </div>
-            </div>
-        </div>
-        <div id="login" class="page">
-            <div class="form-container">
-                <h2 style="text-align: center; margin-bottom: 2rem;">Login to Your Account</h2>
-                
-                <div id="loginSuccess" class="success-message"></div>
-                <div id="loginError" class="error-message"></div>
-                
-                <form id="loginForm">
-                    <div class="form-group">
-                        <label for="username">Username:</label>
-                        <input type="text" id="username" name="username" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <button type="submit" class="btn" style="width: 100%;">Login</button>
-                    </div>
-                </form>
-                
-                <p style="text-align: center; margin-top: 1rem;">
-                    Don't have an account? <a href="#" onclick="showPage('register')" style="color: #667eea;">Register here</a>
-                </p>
-            </div>
-        </div>
-        <div id="register" class="page">
-            <div class="form-container">
-                <h2 style="text-align: center; margin-bottom: 2rem;">Create New Account</h2>
-                
-                <div id="registerSuccess" class="success-message"></div>
-                <div id="registerError" class="error-message"></div>
-                
-                <form id="registerForm">
-                    <div class="form-group">
-                        <label for="newUsername">Username:</label>
-                        <input type="text" id="newUsername" name="newUsername" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="newPassword">Password:</label>
-                        <input type="password" id="newPassword" name="newPassword" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="confirmPassword">Confirm Password:</label>
-                        <input type="password" id="confirmPassword" name="confirmPassword" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <button type="submit" class="btn" style="width: 100%;">Register</button>
-                    </div>
-                </form>
-                
-                <p style="text-align: center; margin-top: 1rem;">
-                    Already have an account? <a href="#" onclick="showPage('login')" style="color: #667eea;">Login here</a>
-                </p>
-            </div>
-        </div>
-        <div id="dashboard" class="page">
-            <div class="user-dashboard">
-                <h2>User Dashboard</h2>
-                
-                <div class="user-info">
-                    <h3>Welcome, <span id="currentUser">User</span>!</h3>
-                    <p>Here's your account information and available actions.</p>
-                </div>
-                
-                <div class="user-actions">
-                    <button class="btn" onclick="showProfile()">View Profile</button>
-                    <button class="btn" onclick="editProfile()">Edit Profile</button>
-                    <button class="btn" onclick="viewSettings()">Settings</button>
-                </div>
-            </div>
-        </div>
-        <div id="profile" class="page">
-            <h2>User Profile</h2>
-            <div class="user-info">
-                <p><strong>Username:</strong> <span id="profileUsername">demo</span></p>
-                <p><strong>Email:</strong> <span id="profileEmail">demo@example.com</span></p>
-                <p><strong>Member Since:</strong> <span id="memberSince">January 2024</span></p>
-            </div>
-            <div style="text-align: center; margin-top: 2rem;">
-                <button class="btn" onclick="showPage('dashboard')">Back to Dashboard</button>
-            </div>
-        </div>
-    </main>
+  <div class="container">
+    <h2>Login / Register</h2>
+    <form id="authForm">
+      <label for="username">Username</label>
+      <input type="text" id="username" required>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <p>&copy; 2025 MWF LTD. All rights reserved.</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#" onclick="showPage('privacy')">Privacy Policy</a>
-                    <a href="#" onclick="showPage('terms')">Terms of Service</a>
-                    <a href="#" onclick="showPage('contact')">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+      <label for="password">Password</label>
+      <input type="password" id="password" required>
 
-    <script>
-        let currentUser = null;
-        let users = [
-            { username: 'demo', password: 'demo123', email: 'demo@example.com' }
-        ];
-        function showPage(pageId) {
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-            
-            const targetPage = document.getElementById(pageId);
-            if (targetPage) {
-                targetPage.classList.add('active');
-            }
-        }
+      <label for="loginRole">Role</label>
+      <select id="loginRole">
+        <option value="manager">Manager</option>
+        <option value="employee">Employee</option>
+        <option value="customer">Customer</option>
+      </select>
 
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            
-            const user = users.find(u => u.username === username && u.password === password);
-            
-            if (user) {
-                currentUser = user;
-                showMessage('loginSuccess', 'Login successful! Redirecting...');
-                
-                document.getElementById('currentUser').textContent = user.username;
-                document.getElementById('profileUsername').textContent = user.username;
-                document.getElementById('profileEmail').textContent = user.email;
-                
-                document.getElementById('loginNav').style.display = 'none';
-                document.getElementById('dashboardNav').style.display = 'block';
-                document.getElementById('logoutNav').style.display = 'block';
-        
-                setTimeout(() => {
-                    showPage('dashboard');
-                }, 1000);
-            } else {
-                showMessage('loginError', 'Invalid username or password!');
-            }
-        });
+      <button type="submit">Login</button>
+      <p style="text-align:center;">Don't have an account? <a href="#" onclick="showRegister()">Register Here</a></p>
+    </form>
 
-        document.getElementById('registerForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const username = document.getElementById('newUsername').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('newPassword').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
+    <form id="registerForm" style="display:none;">
+      <label for="newFullName">Full Name</label>
+      <input type="text" id="newFullName" required>
 
-            if (password !== confirmPassword) {
-                showMessage('registerError', 'Passwords do not match!');
-                return;
-            }
-            
-            if (users.find(u => u.username === username)) {
-                showMessage('registerError', 'Username already exists!');
-                return;
-            }
-            
+      <label for="newPhone">Phone Number</label>
+      <input type="text" id="newPhone" required>
 
-            users.push({ username, password, email });
-            showMessage('registerSuccess', 'Account created successfully! You can now login.');
-            
-            document.getElementById('registerForm').reset();
-            
-            setTimeout(() => {
-                showPage('login');
-            }, 1500);
-        });
+      <label for="newEmail">Email</label>
+      <input type="email" id="newEmail" required>
 
-        function logout() {
-            currentUser = null;
-            
-            document.getElementById('loginNav').style.display = 'block';
-            document.getElementById('dashboardNav').style.display = 'none';
-            document.getElementById('logoutNav').style.display = 'none';
-            
-            document.getElementById('loginForm').reset();
-            
-            showPage('index');
-        }
+      <label for="newPassword">Password</label>
+      <input type="password" id="newPassword" required>
 
-        function showProfile() {
-            showPage('profile');
-        }
+      <label for="registerRole">Role</label>
+      <select id="registerRole">
+        <option value="manager">Manager</option>
+        <option value="employee">Employee</option>
+        <option value="customer">Customer</option>
+      </select>
 
-        function editProfile() {
-            alert('Edit profile functionality would be implemented here');
-        }
+      <button type="button" onclick="registerUser()">Register</button>
+      <p style="text-align:center;">Already have an account? <a href="#" onclick="showLogin()">Back to Login</a></p>
+    </form>
+  </div>
 
-        function viewSettings() {
-            alert('Settings functionality would be implemented here');
-        }
+  <script>
+    const authForm = document.getElementById('authForm');
+    const registerForm = document.getElementById('registerForm');
 
-        function showMessage(elementId, message) {
-            const element = document.getElementById(elementId);
-            element.textContent = message;
-            element.style.display = 'block';
-    
-            setTimeout(() => {
-                element.style.display = 'none';
-            }, 3000);
-        }
+    function showRegister() {
+      authForm.style.display = 'none';
+      registerForm.style.display = 'block';
+    }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            showPage('index');
-        });
-    </script>
-    <a href="index.html" class="btn btn-primary" onclick=""></a>
+    function showLogin() {
+      registerForm.style.display = 'none';
+      authForm.style.display = 'block';
+    }
+
+    function registerUser() {
+      const fullName = document.getElementById('newFullName').value;
+      alert(`User ${fullName} registered successfully!`);
+      showLogin();
+    }
+
+    authForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const role = document.getElementById('loginRole').value;
+      if (role === 'manager') {
+        window.location.href = 'manager-dashboard.html';
+      } else if (role === 'employee') {
+        window.location.href = 'employee-dashboard.html';
+      } else {
+        window.location.href = 'customer-dashboard.html';
+      }
+    });
+  </script>
+
 </body>
 </html>
